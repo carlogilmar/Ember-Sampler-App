@@ -8,5 +8,6 @@ export default DS.Model.extend({
   description: DS.attr(),
   flavour: DS.attr(),
   rating: DS.attr(),
-  container: DS.attr()
+  container: DS.attr(),
+  cup: DS.attr()
 });
