@@ -7,7 +7,7 @@ export default DS.Model.extend({
   location: DS.attr(),
   description: DS.attr(),
   flavour: DS.attr(),
-  rating: DS.attr(),
+  rating: DS.attr('number'),
   container: DS.attr(),
   cup: DS.attr()
 });
