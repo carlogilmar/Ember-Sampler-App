@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('profile');
   this.route('user');
   this.route('bar');
+  this.route('beer', {path: 'beer/:id'});
 });
 
 export default Router;
