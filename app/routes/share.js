@@ -2,11 +2,6 @@ import Route from '@ember/routing/route';
 import { hash } from 'rsvp';
 
 export default Route.extend({
-    model(){
-        return hash({
-            beer: beer
-        });
-    },
     actions:{
         addBeer:function(){
             let shareBeer = this.store.createRecord('beer',{
