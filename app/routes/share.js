@@ -3,7 +3,6 @@ import { hash } from 'rsvp';
 
 export default Route.extend({
     model(){
-        let beer = this.get('store').findRecord('beer', 1);
         return hash({
             beer: beer
         });
