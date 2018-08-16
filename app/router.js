@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('user');
   this.route('bar');
   this.route('beer', {path: 'beer/:id'});
+  this.route('share');
 });
 
 export default Router;
