@@ -294,3 +294,56 @@ Take the beer found in model, and show with the follow template:
 
 </main><!— /.container —>
 ```
+
+# 8. Share a beer
+Create a new route for share a beer
+
+```
+ember generate route share
+```
+
+In the index route add a link to the share route
+```
+<br>{{#link-to ‘share'}} Compartir {{/link-to}}
+```
+
+**Routes/share.js**
+```
+actions:{
+    addBeer:function(){
+        let shareBeer = this.store.createRecord('beer',{
+            name: this.get('controller').get('name'),
+            user: this.get('controller').get('user'),
+            price: this.get('controller').get('price'),
+            img: "https://goo.gl/T3Zu8n",
+            location: this.get('controller').get('location'),
+            description: this.get('controller').get('description'),
+            flavour: this.get('controller').get('flavour'),    
+            rating: this.get('controller').get('rating'),
+            container: "barril",
+            cup: this.get('controller').get('cup')
+        })
+        shareBeer.save();
+        this.transitionTo('index');
+    }
+}
+```
+
+**Templates/share.hbs**
+Add inputs with the values for share the beer
+```
+{{input value=name}}
+{{input value=username}}
+{{input value=description}}
+{{input value=rating}}...
+
+And the action for button
+<button class="btn btn-block btn-primary" {{ action "addBeer"}}>Compartir</button>
+```
+
+**Mirage/config.js**
+```
+this.post(’/beers’);
+```
+
+This will make a POST request sending the data that we fill in the inputs.
