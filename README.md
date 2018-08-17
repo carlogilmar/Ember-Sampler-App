@@ -1,5 +1,7 @@
 # Ember JS Workshop
 
+Visit [Heroku App](https://drink-my-beer.herokuapp.com/)
+
 ## Instructions:
 
 ### Agenda
