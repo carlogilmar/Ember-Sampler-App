@@ -1,5 +1,8 @@
 # Ember JS Workshop
+
 ## Instructions:
+
+### Agenda
 
 # 1. Setup Bootstrap 4 and the start view
 Create a simple app with Ember Cli
@@ -318,7 +321,7 @@ actions:{
             img: "https://goo.gl/T3Zu8n",
             location: this.get('controller').get('location'),
             description: this.get('controller').get('description'),
-            flavour: this.get('controller').get('flavour'),    
+            flavour: this.get('controller').get('flavour'),
             rating: this.get('controller').get('rating'),
             container: "barril",
             cup: this.get('controller').get('cup')
