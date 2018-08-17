@@ -1,4 +1,20 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4"> @carlogilmar 🍻</h1>
-  <p class="lead"> Your profile is here!</p>
+  <img src="http://icons.iconarchive.com/icons/sicons/basic-round-social/512/ember-js-icon.png" width="15%"/>
+  <h1 class="display-4"> {{model.currentUser}} 🍻</h1>
+  <p class="lead"> E X P E R T O &nbsp; E N &nbsp; C E R V E Z A</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{#each model.beers as |beer|}}
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src={{beer.img}} alt="Card image cap">
+          <div class="card-body pull-right text-muted">
+            {{#link-to 'beer' beer.id}} Conocer más...  {{/link-to}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </div>
