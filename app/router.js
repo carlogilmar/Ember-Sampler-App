@@ -7,11 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('profile');
+  this.route('profile', {path: '/:username'});
   this.route('user');
   this.route('bar');
   this.route('beer', {path: 'beer/:id'});
-  this.route('share');
+  this.route('share', {path: '/new/:username'});
 });
 
 export default Router;
