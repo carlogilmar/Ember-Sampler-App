@@ -6,7 +6,7 @@ import $ from 'jquery';
 export default Route.extend({
   model(){
     // Request to non-conventional api
-    return new RSVP.Promise(function (resolve, reject) {
+    let currentUser = new RSVP.Promise(function (resolve, reject) {
       $.ajax({
         type: 'GET',
         url: ENV.rootURL+'users/current',
@@ -17,6 +17,11 @@ export default Route.extend({
           reject(error);
         }
       });
+    });
+
+    return RSVP.hash({
+      currentUser: currentUser,
+      beers: this.get('store').query('beer', {username: "carlogilmar->!"})
     });
   },
 });
