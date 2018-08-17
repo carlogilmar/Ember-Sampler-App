@@ -5,7 +5,7 @@
         <div class="card-body">
           <h5 class="card-title">{{model.currentUser.username}}</h5>
           <img src="http://icons.iconarchive.com/icons/sicons/basic-round-social/512/ember-js-icon.png" width="60%"/>
-          <br><a href="#" class="btn btn-primary btn-sm">Mi Perfil</a>
+          <br> {{#link-to 'profile' model.currentUser.username class="btn btn-primary btn-sm"}} Mi Álbum{{/link-to}}
         </div>
       </div>
     </div>
@@ -15,6 +15,9 @@
           <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
             <h1 class="display-4"> Drink My Beer 🍻</h1>
             <p class="lead"> Discover new beers, share and try!</p>
+            {{#link-to 'share' model.currentUser.username class="btn btn-secondary"}} ➕ Agregar Cerveza  {{/link-to}}
+            <button type="button" class="btn btn-dark"> 📍 Ver Bares </button>
+            <button type="button" class="btn btn-dark"> 🍺 Mis Bebidas </button>
           </div>
         </div>
       </div>
@@ -25,6 +28,7 @@
 <br><br>
 
 <div class="album py-5 bg-light">
+  <h3 class="display-4"> Prueba nuevas experiencias... </h3>
   <div class="container">
 
     <div class="row">
