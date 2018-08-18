@@ -1,16 +1,8 @@
-# Ember JS Workshop
-
-Visit [Heroku App](https://drink-my-beer.herokuapp.com/)
-
-## Instructions:
-
 # # Ember JS Workshop
 
 Visit [Heroku App](https://drink-my-beer.herokuapp.com/)
 
 ## Instructions:
-
-### Agenda
 
 # 1. Setup Bootstrap 4 and the start view
 Create a simple app with Ember Cli
