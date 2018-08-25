@@ -608,3 +608,131 @@ Create a template loading.hbs
 <div class="loader">Loading...</div>
 ```
 
+# 11. Create share-beer component
+
+Create the new component
+```
+ember generate share-beer-form component
+```
+Move the share form HTML code to the component template **components/share-beer-form.hbs**
+
+```
+<div class="p-3 mb-3 bg-light rounded">
+  <h4>Cuentanos tu experiencia con esa chela...</h4><br>
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"> 🍺 Nombre de la bebida</div>
+      </div>
+      {{input value=model.name class="form-control"}}
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"> 💵 Precio </div>
+      </div>
+      {{input value=model.price class="form-control"}}
+    </div>
+  </div>
+
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+      <div class="input-group-text"> 📍 Lugar </div>
+    </div>
+    {{input value=model.location class="form-control"}}
+  </div>
+</div>
+
+<div class="col-auto">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"> 🍻 Tipo </div>
+    </div>
+    {{input value=model.flavour class="form-control"}}
+  </div>
+</div>
+
+<div class="col-auto">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"> Botella o Barril? </div>
+    </div>
+    {{input value=model.container class="form-control"}}
+  </div>
+</div>
+
+<div class="col-auto">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"> 🥃 Tipo de Vaso </div>
+    </div>
+    {{input value=model.cup class="form-control"}}
+  </div>
+</div>
+
+<div class="col-auto">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+       <div class="input-group-text"> ⭐️ Calificación </div>
+    </div>
+    {{input type='number' min="1" max="10" value=model.rating class="form-control"}}
+  </div>
+</div>
+
+<div class="col-auto">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"> 📸 Imagen (url de la imagen) </div>
+    </div>
+    {{input value=model.img class="form-control"}}
+  </div>
+</div>
+
+<div class="col-auto">
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"> Descripción </div>
+    </div>
+    {{input value=model.description class="form-control"}}
+  </div>
+</div>
+
+<br>
+  <button class="btn btn-block btn-primary" {{ action "addBeer"}}>Compartir</button>
+</div>
+```
+
+Add the component in the **share.hbs** template
+
+```
+<div class="col-md-8 blog-main">
+  {{share-beer-form beer=model didSave="moveAfterSave"}}
+</div><!-- /.blog-main -->
+```
+
+Move the addBeer function to the **share-beer-form** component actions
+
+```
+actions: {
+  addBeer: function(){
+    let beer = this.get('beer')
+    beer.save()
+    this.sendAction('didSave',beer);
+  }
+}
+```
+
+Create action in the parent route (**share.js**)
+
+```
+actions: {
+  moveAfterSave: function(){
+    this.transitionTo('index')
+  }
+}
+```
+
+
