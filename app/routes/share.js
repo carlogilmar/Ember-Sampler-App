@@ -10,10 +10,9 @@ export default Route.extend({
   },
 
   actions:{
-    addBeer:function(){
-			let beer = this.currentModel;
-			beer.save()
-      this.transitionTo('index');
+    moveAfterSave: function(){
+      this.transitionTo('index')
     }
   }
+
 });
