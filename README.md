@@ -719,8 +719,12 @@ Move the addBeer function to the **share-beer-form** component actions
 actions: {
   addBeer: function(){
     let beer = this.get('beer')
-    beer.save()
-    this.sendAction('didSave',beer);
+
+    beer.save().then(() =>{
+      this.sendAction('didSave',beer);
+    },function(){
+      console.log('There was an error');
+    });
   }
 }
 ```
