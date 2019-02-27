@@ -433,34 +433,118 @@ Add inputs with the values for share the beer
 <main role="main" class="container">
 <div class="row">
 	<div class="col-md-8 blog-main">
-		<h1 class="pb-3 mb-4 border-bottom text-center">
-		 🍺 {{model.name}}
-		</h1>
 
-		<div class="blog-post text-center">
-			<img src={{model.img}} width="70%"/>
-		</div><!-- /.blog-post -->
+		<div class="p-3 mb-3 bg-light rounded">
+
+			<h4>Cuentanos tu experiencia con esa chela...</h4><br>
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> 🍺 Nombre de la bebida</div>
+					</div>
+					{{input value=model.name class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> 💵 Precio </div>
+					</div>
+					{{input value=model.price class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> 📍 Lugar </div>
+					</div>
+					{{input value=model.location class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> 🍻 Tipo </div>
+					</div>
+					{{input value=model.flavour class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> Botella o Barril? </div>
+					</div>
+					{{input value=model.container class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> 🥃 Tipo de Vaso </div>
+					</div>
+					{{input value=model.cup class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> ⭐️ Calificación </div>
+					</div>
+					{{input type='number' min="1" max="10" value=model.rating class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> 📸 Imagen (url de la imagen) </div>
+					</div>
+					{{input value=model.img class="form-control"}}
+				</div>
+			</div>
+
+			<div class="col-auto">
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> Descripción </div>
+					</div>
+					{{input value=model.description class="form-control"}}
+				</div>
+			</div>
+
+			<br>
+			<button class="btn btn-block btn-primary" {{ action "addBeer"}}>Compartir</button>
+		</div>
+
 	</div><!-- /.blog-main -->
 
 	<aside class="col-md-4 blog-sidebar">
-		<div class="p-3 mb-3 bg-light rounded">
-			<h4>Acerca de esta chela...</h4><br>
-			<p class="mb-0">
-				👤 Certificada por: <strong> {{model.user}} </strong><br>
-				💵 Precio: <strong> {{model.price }} </strong> <br>
-				📍 Lugar: <strong> {{model.location}} </strong> <br>
-				🍻 Tipo: <strong> {{model.flavour}} </strong> <br>
-				🥃 Recipiente: <strong> {{model.cup}} </strong> <br>
-				⭐️ Calificación: <strong> {{model.rating}} / 10 </strong> <br>
-				<br>
-				<h3 class="pb-3 mb-4 font-italic border-bottom text-center"> {{model.description}} </h3>
-			</p>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<br><br>
+				<h3 class="pb-3 mb-4 border-bottom"> 👤 {{model.user}} </h3>
+				<strong>C E R T I F I C A D O R</strong>
+			</div>
 		</div>
+
+		<div class="blog-post text-center">
+			<img src="http://icons.iconarchive.com/icons/sicons/basic-round-social/512/ember-js-icon.png" width="30%"/>
+			<br><br>
+			<strong> TIPOS DE VASO </strong>
+			<img src="https://goo.gl/bPa62t" width="100%"/>
+		</div><!-- /.blog-post -->
 	</aside><!-- /.blog-sidebar -->
 
 </div><!-- /.row -->
 
 </main><!-- /.container -->
+
 
 ```
 
